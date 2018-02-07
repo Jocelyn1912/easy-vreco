@@ -15,10 +15,10 @@
           <button onclick="findMe()">ENCUÉNTRAME</button>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-          <input type="text" placeholder="Origen">
+          <input id="origen" type="text" placeholder="Origen">
         </div>
         <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-          <input type="text" placeholder="Destino">
+          <input id="destino" type="text" placeholder="Destino">
         </div>
         <div id="route" class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
           <button class="ruta">RUTA</button>
@@ -26,12 +26,14 @@
       </div>
     </div>
 
-    <div id="mapa"></div>
+    <div id="map"></div>
+
 
 
   <script src="assets/js/app.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9URB1vdsmZT87QSzXoY28uPXALN44I1o"></script>
-  <!--Import jQuery before materialize.js-->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlvTEd14xDilEfFuzMdnotzoMnpoHV0Ps&callback=initMap"
+  async defer>
+  </script>
   <script
   src="http://code.jquery.com/jquery-3.3.1.js"
   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="

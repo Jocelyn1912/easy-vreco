@@ -1,6 +1,6 @@
-
+/*
 function findMe() {
-  
+
     var output = document.getElementById('mapa');
    
     // Obtenemos latitud y longitud
@@ -21,3 +21,20 @@ function findMe() {
     navigator.geolocation.getCurrentPosition(localizacion, error);
 
 };
+*/
+
+function initMap() {
+  var laboratoria = {lat: -33.45, lng: -70.6667};
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 16,
+    center: laboratoria
+  });
+  var marker = new google.maps.Marker({ //marcador rojo
+    position: laboratoria,
+    map: map
+  });
+};
+
+
+
+
