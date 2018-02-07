@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700');
+
+.container-fluid{
+  font-family: 'Montserrat', sans-serif;
+  background-color: #2e0f6f;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='12' viewBox='0 0 20 12'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='charlie-brown' fill='%237b59c3' fill-opacity='0.4'%3E%3Cpath d='M9.8 12L0 2.2V.8l10 10 10-10v1.4L10.2 12h-.4zm-4 0L0 6.2V4.8L7.2 12H5.8zm8.4 0L20 6.2V4.8L12.8 12h1.4zM9.8 0l.2.2.2-.2h-.4zm-4 0L10 4.2 14.2 0h-1.4L10 2.8 7.2 0H5.8z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.row{
+  padding: 20px;
+}
+
+#findme button{
+  margin-bottom: 10px;
+  padding: 8px 15px;
+  text-align: center;
+  color: white;
+  font-weight: 600;
+  border: 1px solid white;
+  background-color: rgba(0,0,0,0);
+  outline: none;
+}
+
+#findme button:hover{
+  color: #76D7C4;
+  border: 1px solid #76D7C4;
+  background-color: rgba(0,0,0,0);
+  outline: none;
+}
+
+#route button{
+  margin-left: auto;
+  margin-right: auto;
+  padding: 8px 15px;
+  text-align: center;
+  color: #4A235A;
+  font-weight: 800;
+  background-color: #76D7C4;
+  border: none;
+  outline: none;
+}
+
+#route button:hover{
+  background-color: white;
+}
+
+.row input{
+  width: 100%;
+  height: 35px;
+  margin-bottom: 10px;
+  background-color: rgba(0,0,0,0);
+  border: none;
+  border-bottom: 1px solid #76D7C4;
+  color: white;
+  outline: none;
+}
+
+::-webkit-input-placeholder { 
+  color: #fff;
+  opacity: 0.7;
+
+}
+::-moz-placeholder { 
+  color: #fff;
+  opacity: 0.7;
+}
+:-ms-input-placeholder { 
+  color: #fff;
+  opacity: 0.7;
+}
+:-moz-placeholder { 
+  color: #fff;
+  opacity: 0.7;
+}
+
+#map{
+  width: 100%;
+  height: 100%;
+}
+
+
