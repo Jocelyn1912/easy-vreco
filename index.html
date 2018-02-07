@@ -1,43 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <title>EASY VRECO</title>
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-</head>
-<body>
+<html>
+  <head>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title>EASY VRECO</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+  </head>
+  <body>
     <div class="container-fluid">
       <div class="row">
         <div id="findme" class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-          <button onclick="findMe()">ENCUÉNTRAME</button>
+          <button>ENCUÉNTRAME</button>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-          <input id="origen" type="text" placeholder="Origen">
+          <input id="origen" class="controls" type="text" placeholder="Origen">
         </div>
         <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-          <input id="destino" type="text" placeholder="Destino">
+          <input id="destino" class="controls" type="text" placeholder="Destino">
         </div>
         <div id="route" class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
           <button class="ruta">RUTA</button>
         </div>
       </div>
     </div>
-
     <div id="map"></div>
+    <!-- tipo de desplazamiento
+    <div id="mode-selector" class="controls">
+      <input type="radio" name="type" id="changemode-walking" checked="checked">
+      <label for="changemode-walking">Walking</label>
 
+      <input type="radio" name="type" id="changemode-transit">
+      <label for="changemode-transit">Transit</label>
 
+      <input type="radio" name="type" id="changemode-driving">
+      <label for="changemode-driving">Driving</label>
+    </div>
+  -->
 
-  <script src="assets/js/app.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlvTEd14xDilEfFuzMdnotzoMnpoHV0Ps&callback=initMap"
-  async defer>
-  </script>
-  <script
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_5pCcvFS4v15zAsN4rgAVXcGR4l6UKtc&libraries=places&callback=initMap"
+        async defer></script>
+    <script src="assets/js/app.js"></script>
+    <script
   src="http://code.jquery.com/jquery-3.3.1.js"
   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
   crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-</body>
+  </body>
 </html>
