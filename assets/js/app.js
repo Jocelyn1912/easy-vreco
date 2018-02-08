@@ -1,33 +1,41 @@
+/**
+*Función que llama al mapa
+*/
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
-  mapTypeControl: false,
-  center: {lat: -33.418878299999996, lng: -70.64229580000001},
-  zoom: 13
-});
+    mapTypeControl: false,
+    center: {
+      lat: -33.418878299999996,
+      lng: -70.64229580000001
+    },
+    zoom: 13
+  });
 
-new AutocompleteDirectionsHandler(map);
+  new AutocompleteDirectionsHandler(map);
 }
 
 /**
 * @constructor
 */
 function AutocompleteDirectionsHandler(map) {
+  // Tomando origen y destino ingresado en los inputs
   this.map = map;
   this.originPlaceId = null;
   this.destinationPlaceId = null;
   this.travelMode = 'WALKING';
   var originInput = document.getElementById('origen');
   var destinationInput = document.getElementById('destino');
-  /*var modeSelector = document.getElementById('mode-selector');*/
+  // Selector medio de transporte
+  /* var modeSelector = document.getElementById('mode-selector');*/
   this.directionsService = new google.maps.DirectionsService;
   this.directionsDisplay = new google.maps.DirectionsRenderer;
   this.directionsDisplay.setMap(map);
-
+  // Autocompletado de la dirección con places
   var originAutocomplete = new google.maps.places.Autocomplete(
-  originInput, {placeIdOnly: true});
+    originInput, {placeIdOnly: true});
   var destinationAutocomplete = new google.maps.places.Autocomplete(
-  destinationInput, {placeIdOnly: true});
-/*
+    destinationInput, {placeIdOnly: true});
+  /*
   this.setupClickListener('changemode-walking', 'WALKING');
   this.setupClickListener('changemode-transit', 'TRANSIT');
   this.setupClickListener('changemode-driving', 'DRIVING');
@@ -54,14 +62,14 @@ AutocompleteDirectionsHandler.prototype.setupClickListener = function(id, mode) 
 };
 */
 
-
+// Función de autocompletado
 AutocompleteDirectionsHandler.prototype.setupPlaceChangedListener = function(autocomplete, mode) {
   var me = this;
   autocomplete.bindTo('bounds', this.map);
   autocomplete.addListener('place_changed', function() {
     var place = autocomplete.getPlace();
     if (!place.place_id) {
-      window.alert("Please select an option from the dropdown list.");
+      window.alert('Por favor selecciona una opción de la lista.');
       return;
     }
     if (mode === 'ORIG') {
@@ -73,6 +81,7 @@ AutocompleteDirectionsHandler.prototype.setupPlaceChangedListener = function(aut
   });
 };
 
+// Función creando ruta
 AutocompleteDirectionsHandler.prototype.route = function() {
   if (!this.originPlaceId || !this.destinationPlaceId) {
     return;
